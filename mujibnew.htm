@@ -34,13 +34,20 @@
 <script type="text/javascript">
 	const d= new Date();
 	var year=d.getFullYear();
-	dt="Mar 17,1999 00:00:00";
-	dt=dt.replaceAll('1999',year);
-	var countDate=new Date(dt).getTime();
+	var currentDate = new Date();
+  var currentYear = currentDate.getFullYear();
+	var birthday="03-17";
+	var birthdayDate = new Date(birthday);
+  birthdayDate.setFullYear(currentYear);
 
 	    function mujib(){
-	    	var now=new Date().getTime();
-	    	gap=countDate-now;
+
+    	var currentDate = new Date();
+  var currentYear = currentDate.getFullYear();
+	    	 if (currentDate > birthdayDate) {
+    birthdayDate.setFullYear(currentYear + 1);
+  }
+	    	gap=birthdayDate.getTime()-currentDate.getTime();
 	    	var se= 1000;
 	    	var mi= se * 60;
 	    	var ho= mi * 60;
